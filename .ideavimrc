@@ -1,0 +1,61 @@
+set incsearc
+set ideajoin
+
+set relativenumber
+set number
+
+" https://youtrack.jetbrains.com/issue/VIM-1970
+set set highlightedyank
+
+" https://youtrack.jetbrains.com/issue/VIM-959
+set ideamarks
+
+" https://github.com/JetBrains/ideavim/wiki/%60ideajoin%60-examples
+set ideajoin
+
+" https://youtrack.jetbrains.com/issue/VIM-1521  use gcc or gc{motion}
+set commentary
+
+" dia daa cia caa
+set argtextobj
+
+" die dae cie cae "select all text
+set textobj-entire
+
+"https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
+"To exchange two words, place your cursor on the first word and type cxiw.
+"Then move to the second word and type cxiw again.
+"Note: the {motion} used in the first and second use of cx don't have to be the same.
+"cx, cxx, X, cxc
+set exchange
+
+inoremap jj <ESC>
+inoremap JJ <ESC>
+
+:set ignorecase
+:set smartcase
+"/copyright      " Case insensitive "/Copyright      " Case sensitive
+"/copyright\C    " Case sensitive
+
+
+
+
+"/Copyright\c    " Case insensitive
+
+
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+
+
+nmap oo o<Esc>
+
+
+
+nmap OO O<Esc>
+
+" Commands: ys, cs, ds, S
+" https://github.com/tpope/vim-surround
+set surround
+
+" mirar mas chulos
+" https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
