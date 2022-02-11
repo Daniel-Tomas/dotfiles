@@ -15,7 +15,7 @@ export ZSH="/home/dani/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ # ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -80,10 +80,12 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions sudo command-not-found vscode colored-man-pages)
+#plugins=(git zsh-autosuggestions sudo command-not-found vscode colored-man-pages)
+export FZF_BASE="$HOME/.fzf"
+plugins=(git sudo command-not-found vscode colored-man-pages fzf)
 
 
-eval "$(lua /home/dani/.oh-my-zsh/plugins/z.lua/z.lua --init zsh)"
+# eval "$(lua /home/dani/.oh-my-zsh/plugins/z.lua/z.lua --init zsh)"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,7 +112,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias ls='lsd'
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias triqui="ssh a180428@triqui1.fi.upm.es"
@@ -119,7 +120,7 @@ bright () {
 	sudo modprobe i2c-dev
 	sudo chmod a+rw /dev/i2c-*
 }
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -127,7 +128,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 prompt_context(){}
 
 umask 0022
-source /home/dani/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /home/dani/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -136,15 +137,11 @@ export PATH="/home/dani/.emacs.d/bin:$PATH"
 
 export EDITOR="/usr/bin/vim"
 
-export ZPLUG_HOME=/home/dani/opt/zplug
-source $ZPLUG_HOME/init.zsh
-
-zplug "changyuheng/fz", defer:1
-zplug "rupa/z", use:z.sh 
 
 source /usr/share/zsh/share/antigen.zsh
 antigen use prezto
 antigen bundle git
+antigen bundle agkozak/zsh-z
 antigen apply
 
 export CC=/usr/bin/cc
@@ -164,4 +161,23 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# Use powerline
+USE_POWERLINE="true"
+# Source manjaro-zsh-configuration
+if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
+  source /usr/share/zsh/manjaro-zsh-config
+fi
+
+# Use manjaro zsh prompt
+if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
+  source /usr/share/zsh/manjaro-zsh-prompt
+fi
+
+alias ls='lsd'
+
+export ZPLUG_HOME=~/.zplug
+source $ZPLUG_HOME/init.zsh
+
+zplug "changyuheng/fz", defer:1
 
