@@ -43,8 +43,9 @@ inoremap JJ <ESC>
 "/Copyright\c    " Case insensitive
 
 
-vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+" select, yank, then / and Ctrl+R and " to paste it in the search box
 
+" :.,+4s/x/y/g
 
 
 nmap oo o<Esc>
