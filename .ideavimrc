@@ -1,11 +1,36 @@
-set incsearc
+" Ctrl + p show parameters in pycharm
+" Ctrl + shift + I show definition of the symbol at the caret
+
+" U
+" Uppercase the visually-selected text.
+" First press v or V then move to select text.
+" If you don't select text, pressing U will undo all changes to the current lin
+
+" Ctrl + x and a to increase a decrease a number in vim
+
+" J - join line below to the current one with one space in between
+
+"/copyright      " Case insensitive "/Copyright      " Case sensitive
+"/copyright\C    " Case sensitive
+"/Copyright\c    " Case insensitive
+
+" select, yank, then / and Ctrl+R and " to paste it in the search box
+" :.,+4s/x/y/g
+
+" Ctrl+E and Ctrl+Y shortcuts for Vim that respectively move the screen up and down with a one line step, without moving the cursor.
+
+" use zs or ze (start and end) to delimit whats matched, "foo \zsbar\ze" baz matches the “bar” in foo bar baz
+" https://vim.fandom.com/wiki/Regex_lookahead_and_lookbehind#Match_start_and_end
+" https://vi.stackexchange.com/questions/2840/how-to-find-every-occurrence-of-a-word-and-append-some-text-to-it
+
+set incsearch
 set ideajoin
 
 set relativenumber
 set number
 
 " https://youtrack.jetbrains.com/issue/VIM-1970
-set set highlightedyank
+set highlightedyank
 
 " https://youtrack.jetbrains.com/issue/VIM-959
 set ideamarks
@@ -34,18 +59,6 @@ inoremap JJ <ESC>
 
 :set ignorecase
 :set smartcase
-"/copyright      " Case insensitive "/Copyright      " Case sensitive
-"/copyright\C    " Case sensitive
-
-
-
-
-"/Copyright\c    " Case insensitive
-
-
-" select, yank, then / and Ctrl+R and " to paste it in the search box
-
-" :.,+4s/x/y/g
 
 
 nmap oo o<Esc>
@@ -59,4 +72,29 @@ nmap OO O<Esc>
 set surround
 
 " mirar mas chulos
-" https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
+" https://github.com/JetBrains/ideavim/wiki/Emulated-plugins""
+
+-- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+" Find more examples here: https://jb.gg/share-ideavimrc
