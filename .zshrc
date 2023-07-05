@@ -1,3 +1,10 @@
+# To execute first in home dir:
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+# curl -L git.io/antigen > antigen.zsh
+# check paths
+
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -142,7 +149,7 @@ source $ZPLUG_HOME/init.zsh
 zplug "changyuheng/fz", defer:1
 zplug "rupa/z", use:z.sh 
 
-source /usr/share/zsh/share/antigen.zsh
+source /home/daniel/antigen.zsh
 antigen use prezto
 antigen bundle git
 antigen apply
@@ -164,4 +171,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
 
