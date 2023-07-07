@@ -1,3 +1,5 @@
+" TODO: disable ctrl+c shortcut for vim, so it is easy to copy
+
 " Ctrl + p show parameters in pycharm
 " Ctrl + shift + I show definition of the symbol at the caret
 
