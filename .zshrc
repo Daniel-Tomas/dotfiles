@@ -2,7 +2,7 @@
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 # curl -L git.io/antigen > antigen.zsh
-# check paths
+# check paths and whole file for comments
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -143,11 +143,17 @@ export PATH="/home/dani/.emacs.d/bin:$PATH"
 
 export EDITOR="/usr/bin/vim"
 
-export ZPLUG_HOME=/home/dani/opt/zplug
+export ZPLUG_HOME=/home/daniel/opt/zplug
 source $ZPLUG_HOME/init.zsh
+
+zplug romkatv/powerlevel10k, as:theme, depth:1
 
 zplug "changyuheng/fz", defer:1
 zplug "rupa/z", use:z.sh 
+
+# TODO: Uncomment first time:
+# zplug install 
+zplug load # --verbose
 
 source /home/daniel/antigen.zsh
 antigen use prezto
