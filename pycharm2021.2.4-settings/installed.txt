@@ -1,0 +1,9 @@
+IdeaVIM
+Key Promoter X
+atom-one
+com.github.lppedd.idea-conventional-commit
+com.mallowigi
+com.tabnine.TabNine
+izhangzhihao.rainbow.brackets
+org.sonarlint.idea
+zielu.gittoolbox

@@ -1,0 +1,37 @@
+<toolSet name="External Tools">
+  <tool name="./deployment/local/postgres_test/start.sh" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="$USER_HOME$/helloagain/backend/deployment/local/postgres_test/start.sh" />
+      <option name="PARAMETERS" value="&amp;" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/helloagain/backend" />
+    </exec>
+  </tool>
+  <tool name="pycodestyle" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="$USER_HOME$/helloagain/env/bin/pycodestyle" />
+      <option name="PARAMETERS" value="." />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/helloagain/backend" />
+    </exec>
+  </tool>
+  <tool name="start_local" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="$USER_HOME$/helloagain/backend/deployment/local/start_local.sh" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/helloagain/backend" />
+    </exec>
+  </tool>
+  <tool name="test local" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="$USER_HOME$/helloagain/backend/deployment/local/postgres_test/start.sh" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/helloagain/backend" />
+    </exec>
+  </tool>
+  <tool name="create oidc rsa key" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="export OIDC_RSA_PRIVATE_KEY=$(openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:4096 --quiet)" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
+    </exec>
+  </tool>
+</toolSet>

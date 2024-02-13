@@ -1,0 +1,20 @@
+<application>
+  <component name="FindSettings">
+    <option name="customScope" value="All Places" />
+    <option name="defaultScopeName" value="All Places" />
+    <option name="localRegularExpressions" value="true" />
+    <option name="LOCAL_REGULAR_EXPRESSIONS" value="true" />
+    <option name="SEARCH_SCOPE" value="All Places" />
+    <option name="FILE_MASK" value="test*.py" />
+    <mask>*.css</mask>
+    <mask>*.xml</mask>
+    <mask>*.pyw</mask>
+    <mask>*.md</mask>
+    <mask>*.html</mask>
+    <mask>*.py</mask>
+    <mask>models.py</mask>
+    <mask>!test*.py</mask>
+    <mask>urls.py</mask>
+    <mask>test*.py</mask>
+  </component>
+</application>
