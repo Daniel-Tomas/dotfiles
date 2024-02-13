@@ -1,8 +1,4 @@
-# To execute first in home dir:
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-# curl -L git.io/antigen > antigen.zsh
-# check paths and whole file for comments
+# USED IN UBUNTU 
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -16,13 +12,15 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/dani/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -33,18 +31,21 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
+# Uncomment the following line to automatically update without prompting.
+DISABLE_UPDATE_PROMPT="true"
+
+
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -59,12 +60,10 @@ DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
-# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -90,7 +89,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git zsh-autosuggestions sudo command-not-found vscode colored-man-pages)
 
 
-eval "$(lua /home/dani/.oh-my-zsh/plugins/z.lua/z.lua --init zsh)"
+# eval "$(lua /home/dani/.oh-my-zsh/plugins/z.lua/z.lua --init zsh)"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -117,10 +116,21 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# To execute first in home dir:
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+# curl -L git.io/antigen > antigen.zsh
+# check paths and whole file for comments
+
 alias ls='lsd'
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
+alias clipboard='xclip -sel clip'
 alias triqui="ssh a180428@triqui1.fi.upm.es"
+
 
 bright () {
 	sudo modprobe i2c-dev
@@ -134,14 +144,14 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 prompt_context(){}
 
 umask 0022
-source /home/dani/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/daniel/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH="/home/dani/opt/clion-2020.3.2/bin:$PATH"
-export PATH="/home/dani/.emacs.d/bin:$PATH"
 
 export EDITOR="/usr/bin/vim"
+
+
 
 export ZPLUG_HOME=/home/daniel/opt/zplug
 source $ZPLUG_HOME/init.zsh
@@ -155,27 +165,14 @@ zplug "rupa/z", use:z.sh
 # zplug install 
 zplug load # --verbose
 
+
 source /home/daniel/antigen.zsh
+# antigen theme romkatv/powerlevel10k
 antigen use prezto
 antigen bundle git
 antigen apply
 
 export CC=/usr/bin/cc
 export CXX=/usr/bin/c++
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/dani/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/dani/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/dani/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/dani/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 
