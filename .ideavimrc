@@ -1,23 +1,20 @@
-# USED IN UBUNTU 
-
 " .ideavimrc is a configuration file for IdeaVim plugin. It uses
 "   the same commands as the original .vimrc configuration.
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
 
 
-"" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
 
-" Do incremental searching.
+" --- intellij ide shortcuts ---
+ " option + up and down arrow to increase decerase logically a selection
 
-" Don't use Ex mode, use Q for formatting.
+
+
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
 " Highlight copied text
-" Plug 'machakann/vim-highlightedyank'
+Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
 
@@ -31,8 +28,6 @@ Plug 'tpope/vim-commentary'
 
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
-
-
 
 
 "------------------------------- Custom part
@@ -81,6 +76,24 @@ set number
 " https://youtrack.jetbrains.com/issue/VIM-1970
 set highlightedyank
 
+" default
+" let mapleader="\"
+
+" Plug 'easymotion/vim-easymotion'
+" https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins#easymotion
+" usage \\f<letter>
+set easymotion
+
+" https://plugins.jetbrains.com/plugin/15348-ideavim-sneak
+" usage
+" Use `s` plus two characters to search forward in document
+" Use `S` plus two characters to search backward in document
+" Use `;` and `,` just as with `f` and `F` commands to repeat searches
+
+set sneak
+
+" https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins#which-key
+set which-key
 " https://youtrack.jetbrains.com/issue/VIM-959
 set ideamarks
 
